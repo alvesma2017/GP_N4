@@ -9,21 +9,14 @@
 <body>
     <h1>Guia Perguntas</h1>
     <br>
-   
-    aplication: <%= aplication %> <br>
-    &nbsp;&nbsp;&nbsp;&nbsp;kind: <%= kind %> <br>
 
-    <% if(msg == true) { %>
-        <h3>Erro!!</h3>
+    <% if(msg == true) 
+    { %>
+        aplication: <%= aplication %> <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;kind: <%= kind %> <br>
     <%} else{ %>
         <h3>Nenhum erro</h3>
     <%}%>
-    <% produtos.forEach(function(produtos) {%>
-        <%= produtos.nome %>
-        <br>
-        <%= produtos.preco %>
-
-    <%})%>
     <br>
     <h3>Perguntas</h3>
 </body>

@@ -4,10 +4,25 @@ const app = express()
 //setando a engine EJS para uso
 app.set('view engine','ejs')
 
-app.get("/",(req,res)=>{
+app.get("/",(req,res) => {
 
-    //renderizando um HTML que está na subpasta "principal" da pasta "views"
-    res.render("principal/perfil")
+    var aplication = "v1"
+    var kind = "Pod"
+    var exibirMsg = false
+
+    var produtos =  [
+        { nome : "Leite", preco : 3.00},
+        { nome : "Coca-Cola", preco : 2.00},
+        { nome : "Chocolate", preco : 5.00},
+    ]
+
+    //renderizando um HTML da pasta "views"
+    res.render("index",{
+        aplication : aplication,
+        kind : kind,
+        msg : exibirMsg,
+        produtos: produtos
+    })
 
 })
 app.listen(3000,()=>{console.log("servidor ok")
