@@ -3,6 +3,8 @@ const app = express()
 
 //setando a engine EJS para uso
 app.set('view engine','ejs')
+//definindo para usar arquivos estaticos, tipo: css
+app.use(express.static('public'))
 
 app.get("/",(req,res) => {
 
