@@ -1,31 +1,40 @@
 const express = require('express')
 const app = express()
+const bodyparser = require('body-parser')
 
 //setando a engine EJS para uso
 app.set('view engine','ejs')
 //definindo para usar arquivos estaticos, tipo: css
 app.use(express.static('public'))
+//definindo para usar o body-parser
+app.use(bodyparser.urlencoded({extended: false}))
+//definindo para usar o body-parser em JSON
+app.use(bodyparser.json())
 
 app.get("/",(req,res) => {
 
-    var aplication = "v1"
-    var kind = "Pod"
-    var exibirMsg = false
+    res.render("index")
 
-    var produtos =  [
-        { nome : "Leite", preco : 3.00},
-        { nome : "Coca-Cola", preco : 2.00},
-        { nome : "Chocolate", preco : 5.00},
-    ]
+})
 
-    //renderizando um HTML da pasta "views"
-    res.render("index",{
-        aplication : aplication,
-        kind : kind,
-        msg : exibirMsg,
-        produtos: produtos
+app.get("/perguntar",(req,res) => {
+
+    res.render("perguntar")
+
+})
+//recebe os dados do form por isso é POST
+app.post("/salvardados",(req,res) => {
+
+    var titulo = req.body.titulo
+    var descricao = req.body.descricao
+    //res.send("Dados salvos:" + titulo + " " + descricao)
+    res.render("salvadados",{
+        titulo: titulo,
+        descricao: descricao
+
     })
 
 })
+
 app.listen(3000,()=>{console.log("servidor ok")
 })

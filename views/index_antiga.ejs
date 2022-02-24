@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Guia de Perguntas e Respostas</title>
+</head>
+<body>
+    <h1>Guia Perguntas</h1>
+    <br>
+   
+    aplication: <%= aplication %> <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;kind: <%= kind %> <br>
+
+    <% if(msg == true) { %>
+        <h3>Erro!!</h3>
+    <%} else{ %>
+        <h3>Nenhum erro</h3>
+    <%}%>
+    <% produtos.forEach(function(produtos) {%>
+        <%= produtos.nome %>
+        <br>
+        <%= produtos.preco %>
+
+    <%})%>
+    <br>
+    <h3>Perguntas</h3>
+</body>
+</html>
