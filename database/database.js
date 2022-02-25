@@ -4,3 +4,4 @@ const connection = new Sequelize('guia_perguntas','root','wcawca#023',{
     dialect: 'mysql'
 
 })
+module.exports = connection
