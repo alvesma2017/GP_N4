@@ -40,7 +40,7 @@ app.get("/",(req,res) => {
     
 
 })
-
+//rota perguntar_
 app.get("/perguntar",(req,res) => {
 
     res.render("perguntar")
