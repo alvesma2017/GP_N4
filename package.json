@@ -1,21 +1,21 @@
 {
   "name": "gp_n4",
   "version": "1.0.0",
-  "description": "Sistema de geração de yaml",
+  "description": "Sistema de perguntas e respostas",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alvesma2017/GerYaml.git"
+    "url": "git+https://github.com/alvesma2017/GP_N4.git"
   },
   "author": "Marcelo Alves",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/alvesma2017/GerYaml/issues"
+    "url": "https://github.com/alvesma2017/GP_N4/issues"
   },
-  "homepage": "https://github.com/alvesma2017/GerYam#readme",
+  "homepage": "https://github.com/alvesma2017/GP_N4#readme",
   "dependencies": {
     "body-parser": "^1.19.2",
     "ejs": "^3.1.6",
