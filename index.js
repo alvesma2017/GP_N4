@@ -16,7 +16,7 @@ app.get("/",(req,res) => {
     res.render("index")
 
 })
-
+//rota perguntar
 app.get("/perguntar",(req,res) => {
 
     res.render("perguntar")
