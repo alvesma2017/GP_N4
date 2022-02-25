@@ -1,14 +1,14 @@
 {
   "name": "gp_n4",
   "version": "1.0.0",
-  "description": "plataforma de perguntas e respostas",
+  "description": "Sistema para gerar Yaml",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alvesma2017/GP_N4.git"
+    "url": "git+https://github.com/alvesma2017/Gerar_Yaml.git"
   },
   "author": "Marcelo Alves",
   "license": "ISC",
