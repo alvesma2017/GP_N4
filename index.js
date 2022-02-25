@@ -4,6 +4,7 @@ const bodyparser = require('body-parser')
 const connection = require('./database/database')
 const perguntamodel1 = require('./database/Pergunta')
 const respostamodel1 = require('./database/Resposta')
+const resposta = require('./database/Resposta')
 
 connection
     .authenticate()
@@ -69,9 +70,22 @@ app.get("/perguntas/:id",(req,res) => {
         where: {id: id}
     }).then(pergunta => {
         if(pergunta != undefined){
-            res.render("pergunta",{
-                pergunta: pergunta
+
+            resposta.findAll({
+                where: {perguntaId: pergunta.id},
+                order: [
+                    ['id','desc']
+                ]
+            }).then(respostas =>{
+
+                res.render("pergunta",{
+                    pergunta: pergunta,
+                    respostas: respostas
+                })
+
             })
+
+          
         }else{
             res.redirect("/")
         }
@@ -79,7 +93,18 @@ app.get("/perguntas/:id",(req,res) => {
     })
 
 })
+app.post("/responder",(req,res) =>{
 
+    var corpo = req.body.corpo
+    var perguntaId = req.body.pergunta
+    resposta.create({
+        corpo: corpo,
+        perguntaId: perguntaId
+    }).then(() =>{
+        res.redirect("perguntas/"+perguntaId)
+    })
+
+})
 
 
 app.listen(3000,()=>{console.log("servidor ok")
